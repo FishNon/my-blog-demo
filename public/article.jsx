@@ -40,14 +40,13 @@ export default class Article extends Component {
     }
 
     _onSubmit() {
-        alert('sda');
-        request.post('api/article')
+        request.post('/api/article')
             .send({
                 title: this.state.title,
                 content: this.state.content
             })
             .end((err, res)=> {
-                if (err) return console.err(err);
+                if (err) return console.error(err);
                 console.log(res.statusCode);
             })
     }
